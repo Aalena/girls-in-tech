@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 const { key } = require("../config/key");
 const mockData = require('./mock/mockdata');
+const eventMockData = require('./mock/eventMockData');
 
 exports.getIndex = (req, res) => {
     res.render('index');
@@ -38,7 +39,7 @@ exports.postHelpline = (req, res) => {
 
 }
 exports.getEvents = (req, res) => {
-    res.render('events', { title: 'events' });
+    res.render('events', {eventData: eventMockData});
 }
 exports.getBlogs = (req, res) => {
     res.render('blogs', { title: 'blogs' });
